@@ -1,0 +1,21 @@
+# Requêtes du fichier routage dynamique et body
+
+# Routage dynamique
+
+curl -X 'GET' -i 'http://127.0.0.1:8000/'
+
+curl -X 'GET' -i 'http://127.0.0.1:8000/users'
+
+curl -X 'GET' -i 'http://127.0.0.1:8000/users/userid'
+
+curl -X 'GET' -i 'http://127.0.0.1:8000/users/userid/name'
+
+curl -X 'GET' -i 'http://127.0.0.1:8000/users/userid/subscription'
+   
+
+# body
+curl -X 'PUT' -i 'http://127.0.0.1:8000/users' -H 'Content-Type: application/json' \
+  -d '{"userid" : 1, "name": "Alpha", "subscription": "free tier"}'
+
+curl -X 'POST' -i 'http://127.0.0.1:8000/users/1' -H 'Content-Type: application/json' \
+  -d '{"userid" : 5, "name": "Beta", "subscription": "haha tier"}'
